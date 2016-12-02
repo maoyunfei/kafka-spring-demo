@@ -1,0 +1,15 @@
+server:
+    port: 8085
+    context-path:
+
+logging:
+    level:
+        com.ws.kislev: DEBUG
+
+spring:
+    jackson.serialization.INDENT_OUTPUT: true
+    profiles.active: local
+
+    kafka:
+        broker:
+            address: 127.0.0.1:9092
