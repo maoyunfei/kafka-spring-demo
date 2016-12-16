@@ -1,5 +1,6 @@
 package com.ws.myf.conf;
 
+import com.ws.myf.listener.MyKafkaReceiver;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -78,4 +79,9 @@ public class KafkaConfig {
         return propsMap;
     }
 
+
+    @Bean
+    public MyKafkaReceiver listener(){
+       return new MyKafkaReceiver();
+    }
 }
