@@ -1,6 +1,7 @@
 package com.ws.myf.conf;
 
-import com.ws.myf.listener.MyKafkaReceiver;
+import com.ws.myf.listener.MyKafkaReceiver1;
+import com.ws.myf.listener.MyKafkaReceiver2;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -83,7 +84,12 @@ public class KafkaConfig {
 
 
     @Bean
-    public MyKafkaReceiver listener(){
-       return new MyKafkaReceiver();
+    public MyKafkaReceiver1 listener1(){
+       return new MyKafkaReceiver1();
+    }
+
+    @Bean
+    public MyKafkaReceiver2 listener2(){
+        return new MyKafkaReceiver2();
     }
 }

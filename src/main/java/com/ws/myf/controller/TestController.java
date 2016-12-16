@@ -18,8 +18,9 @@ public class TestController {
     @RequestMapping(value = "/test",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public String getCaseEntrustChargeType(@RequestParam(name = "text")String test) {
-        kafkaTemplate.send("topic-1",test);
+    public String getCaseEntrustChargeType(@RequestParam(name = "topic")String topic,
+                                           @RequestParam(name = "text")String test) {
+        kafkaTemplate.send(topic,test);
         return "hello";
     }
 }
