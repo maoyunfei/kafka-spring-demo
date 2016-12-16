@@ -7,7 +7,6 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafka;
-import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
@@ -74,14 +73,13 @@ public class KafkaConfig {
         propsMap.put(ConsumerConfig.SESSION_TIMEOUT_MS_CONFIG, "15000");
         propsMap.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         propsMap.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-        propsMap.put(ConsumerConfig.GROUP_ID_CONFIG, "group-A");
-        propsMap.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+//        propsMap.put(ConsumerConfig.GROUP_ID_CONFIG, "group-A");
+        propsMap.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
         return propsMap;
     }
 
-    @KafkaListener(containerFactory = "kafkaListenerContainerFactory",topics = "topic-1")
-    public void listen(String record){
-
-        System.out.println("收到消息：");
-    }
+//    @KafkaListener(containerFactory = "kafkaListenerContainerFactory",topics = "topic-1")
+//    public void listen(@Payload String record){
+//        System.out.println("收到消息：");
+//    }
 }

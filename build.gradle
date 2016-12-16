@@ -43,7 +43,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 ext {
-    springFrameworkVersion = '4.2.5.RELEASE'
+    springFrameworkVersion = '4.2.3.RELEASE'
 }
 
 dependencies {
