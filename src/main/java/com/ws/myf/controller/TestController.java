@@ -5,6 +5,7 @@ import org.springframework.http.MediaType;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,8 +18,8 @@ public class TestController {
     @RequestMapping(value = "/test",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public String getCaseEntrustChargeType() {
-        kafkaTemplate.send("topic-1","hehehehe");
+    public String getCaseEntrustChargeType(@RequestParam(name = "text")String test) {
+        kafkaTemplate.send("topic-1",test);
         return "hello";
     }
 }
