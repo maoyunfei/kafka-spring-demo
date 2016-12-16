@@ -78,8 +78,4 @@ public class KafkaConfig {
         return propsMap;
     }
 
-//    @KafkaListener(containerFactory = "kafkaListenerContainerFactory",topics = "topic-1")
-//    public void listen(@Payload String record){
-//        System.out.println("收到消息：");
-//    }
 }
