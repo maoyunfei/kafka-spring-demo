@@ -9,6 +9,6 @@ import org.springframework.messaging.handler.annotation.Payload;
 public class MyKafkaReceiver2 {
     @KafkaListener(containerFactory = "kafkaListenerContainerFactory",topics = "topic-2")
     public void listen(@Payload String record){
-        System.out.println("收到消息："+record);
+        System.out.println("receiver2收到消息："+record);
     }
 }
